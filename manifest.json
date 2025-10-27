@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Copy as Org-Mode",
+  "version": "1.0.0",
+  "description": "Copy selection or links as Org-mode format text.",
+  "icons": {
+    "16": "img/icon-16.png",
+    "32": "img/icon-32.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "img/icon-16.png",
+      "32": "img/icon-32.png",
+      "48": "img/icon-48.png",
+      "128": "img/icon-128.png"
+    },
+    "default_title": "Copy as Org-mode (Ctrl+Alt+O)"
+  },
+  "options_ui": {
+    "page": "dist/options_ui.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["img/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "notifications"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+O",
+        "linux": "Ctrl+Alt+O",
+        "mac": "Command+Alt+O"
+      },
+      "description": "Copy as Org-Mode"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"]
+    }
+  ]
+}
