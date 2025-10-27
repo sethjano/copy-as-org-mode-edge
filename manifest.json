@@ -19,11 +19,11 @@
     "default_title": "Copy as Org-mode (Ctrl+Alt+O)"
   },
   "options_ui": {
-    "page": "dist/options_ui.html",
+    "page": "options_ui.html",
     "open_in_tab": false
   },
   "background": {
-    "service_worker": "dist/background.js"
+    "service_worker": "background.js"
   },
   "web_accessible_resources": [
     {
@@ -35,22 +35,13 @@
     "activeTab",
     "contextMenus",
     "storage",
-    "notifications"
+    "notifications",
+    "scripting"
   ],
-  "commands": {
-    "_execute_action": {
-      "suggested_key": {
-        "default": "Ctrl+Alt+O",
-        "linux": "Ctrl+Alt+O",
-        "mac": "Command+Alt+O"
-      },
-      "description": "Copy as Org-Mode"
-    }
-  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["dist/content.js"]
+      "js": ["content.js"]
     }
   ]
 }

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy as Org-Mode - Test Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            background: #fafafa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        h1 { color: #2c5aa0; }
+        h2 { color: #5a7fc7; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ddd;
+        }
+        blockquote {
+            border-left: 4px solid #ddd;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #f9f9f9;
+            font-style: italic;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #f2f2f2;
+            font-weight: bold;
+        }
+        .highlight {
+            background: yellow;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Copy as Org-Mode Extension - Test Page</h1>
+        
+        <p>This page contains various HTML elements to test the <strong>HTML-to-Org-mode conversion</strong> functionality. Select different sections and use the <em>Copy Selection as Org-Mode</em> context menu option to test the conversion.</p>
+
+        <div class="test-section">
+            <h3>📝 Instructions</h3>
+            <p>Select any section below and right-click to choose <strong>"Copy Selection as Org-Mode"</strong>. Then paste the result into your favorite text editor or Emacs to see the Org-mode formatting.</p>
+        </div>
+
+        <h2>Text Formatting Examples</h2>
+        
+        <p>This paragraph contains various text formatting: <strong>bold text</strong>, <em>italic text</em>, <u>underlined text</u>, <code>inline code</code>, and <del>strikethrough text</del>.</p>
+        
+        <p>You can also have <strong><em>bold and italic combined</em></strong>, or <code><strong>bold code</strong></code> for more complex formatting.</p>
+
+        <h2>Headings Hierarchy</h2>
+        
+        <h3>This is a Level 3 Heading</h3>
+        <p>Some content under the level 3 heading.</p>
+        
+        <h4>This is a Level 4 Heading</h4>
+        <p>Content under level 4.</p>
+        
+        <h5>This is a Level 5 Heading</h5>
+        <p>Content under level 5.</p>
+        
+        <h6>This is a Level 6 Heading</h6>
+        <p>Content under level 6.</p>
+
+        <h2>Links and References</h2>
+        
+        <p>Here are some example links:</p>
+        <ul>
+            <li><a href="https://orgmode.org/">Official Org-mode website</a></li>
+            <li><a href="https://github.com/sethjano/copy-as-org-mode">Original Firefox Extension Repository</a></li>
+            <li><a href="mailto:test@example.com">Email link example</a></li>
+            <li><a href="#headings-hierarchy">Internal link to section above</a></li>
+        </ul>
+
+        <h2>Code Examples</h2>
+        
+        <p>Inline code example: <code>console.log('Hello, Org-mode!');</code></p>
+        
+        <p>Here's a code block:</p>
+        <pre>function convertToOrgMode(html) {
+    // Process HTML elements
+    const result = processNode(html);
+    return result;
+}
+
+// Example usage
+const orgText = convertToOrgMode(htmlContent);
+console.log(orgText);</pre>
+
+        <h2>Lists</h2>
+        
+        <h3>Unordered List</h3>
+        <ul>
+            <li>First item with <strong>bold text</strong></li>
+            <li>Second item with <a href="https://example.com">a link</a></li>
+            <li>Third item with <code>inline code</code></li>
+            <li>Fourth item with <em>italic text</em></li>
+        </ul>
+        
+        <h3>Ordered List</h3>
+        <ol>
+            <li>Step one: Install the extension</li>
+            <li>Step two: Select some text</li>
+            <li>Step three: Right-click and choose <strong>Copy as Org-Mode</strong></li>
+            <li>Step four: Paste into your <em>favorite editor</em></li>
+        </ol>
+
+        <h2>Blockquotes</h2>
+        
+        <blockquote>
+            <p>This is a blockquote with some <strong>bold text</strong> and a <a href="https://example.com">link</a>. Blockquotes are great for highlighting important information or quotes from other sources.</p>
+        </blockquote>
+        
+        <blockquote>
+            <p>Another blockquote example with <em>italic text</em> and <code>inline code</code>.</p>
+        </blockquote>
+
+        <h2>Tables</h2>
+        
+        <h3>Simple Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>HTML</th>
+                    <th>Org-mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Bold</strong></td>
+                    <td><code>&lt;strong&gt;text&lt;/strong&gt;</code></td>
+                    <td><code>*text*</code></td>
+                </tr>
+                <tr>
+                    <td><em>Italic</em></td>
+                    <td><code>&lt;em&gt;text&lt;/em&gt;</code></td>
+                    <td><code>/text/</code></td>
+                </tr>
+                <tr>
+                    <td><code>Code</code></td>
+                    <td><code>&lt;code&gt;text&lt;/code&gt;</code></td>
+                    <td><code>~text~</code></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Complex Table with Links</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Browser</th>
+                    <th>Extension Store</th>
+                    <th>Manifest Version</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Firefox</strong></td>
+                    <td><a href="https://addons.mozilla.org">Mozilla Add-ons</a></td>
+                    <td>V2</td>
+                    <td>✅ Original</td>
+                </tr>
+                <tr>
+                    <td><strong>Edge</strong></td>
+                    <td><a href="https://microsoftedge.microsoft.com/addons">Edge Add-ons</a></td>
+                    <td>V3</td>
+                    <td>🚀 This Project</td>
+                </tr>
+                <tr>
+                    <td><strong>Chrome</strong></td>
+                    <td><a href="https://chrome.google.com/webstore">Chrome Web Store</a></td>
+                    <td>V3</td>
+                    <td>🚀 Compatible</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Mixed Content Example</h2>
+        
+        <div class="highlight">
+            <h3>Complex Section with Multiple Elements</h3>
+            <p>This section contains <strong>multiple types</strong> of content to test complex conversions:</p>
+            
+            <ol>
+                <li><strong>Bold item</strong> with <a href="https://orgmode.org">a link to Org-mode</a></li>
+                <li><em>Italic item</em> with <code>inline code</code></li>
+                <li>Regular item with <del>strikethrough text</del></li>
+            </ol>
+            
+            <blockquote>
+                <p>A quote within the mixed content: <em>"The best way to test conversion is with <strong>real content</strong> that includes <a href="https://example.com">links</a> and <code>code snippets</code>."</em></p>
+            </blockquote>
+            
+            <p>And some code:</p>
+            <pre>// Test the extension with this content
+const result = copyAsOrgMode(selection);
+console.log('Converted:', result);</pre>
+        </div>
+
+        <hr>
+
+        <h2>Testing Instructions</h2>
+        
+        <p><strong>How to test:</strong></p>
+        <ol>
+            <li>Select any section above (try the "Mixed Content Example" for a comprehensive test)</li>
+            <li>Right-click and choose <strong>"Copy Selection as Org-Mode"</strong></li>
+            <li>Paste the result into a text editor</li>
+            <li>Compare with expected Org-mode syntax</li>
+        </ol>
+        
+        <p><em>Expected conversions:</em></p>
+        <ul>
+            <li><code>&lt;strong&gt;</code> → <code>*text*</code></li>
+            <li><code>&lt;em&gt;</code> → <code>/text/</code></li>
+            <li><code>&lt;code&gt;</code> → <code>~text~</code></li>
+            <li><code>&lt;a href="url"&gt;text&lt;/a&gt;</code> → <code>[[url][text]]</code></li>
+            <li><code>&lt;h2&gt;</code> → <code>** heading</code></li>
+            <li>Tables → Org-mode table format with <code>|</code> separators</li>
+        </ul>
+
+        <div class="test-section">
+            <h3>🎯 Quick Test Section</h3>
+            <p>Select this entire box to test: <strong>Bold</strong>, <em>italic</em>, <code>code</code>, <a href="https://example.com">link</a>, and <del>strikethrough</del> all in one go!</p>
+        </div>
+    </div>
+</body>
+</html>
