@@ -38,6 +38,14 @@
     "notifications",
     "scripting"
   ],
+  "commands": {
+    "copy-selection-as-org-mode": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+O"
+      },
+      "description": "Copy selection as Org-Mode"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
