@@ -1,0 +1,202 @@
+#+TITLE: Copy as Org-Mode - Edge/Chrome Extension
+#+AUTHOR: Seth Jano
+#+DATE: 2025
+
+* Overview
+
+A browser extension that allows you to copy selected web page content as Org-mode formatted text. This extension converts HTML elements to proper Org-mode syntax, making it easy to capture web content for use in Emacs Org-mode documents.
+
+*Built for Edge and Chrome browsers using Manifest V3.*
+
+* Features
+
+** Core Functionality
+- ✅ Copy selected text as Org-mode format with full HTML conversion
+- ✅ Copy current page title and URL as Org-mode link
+- ✅ Copy individual links as Org-mode format
+- ✅ Context menu integration (right-click options)
+- ✅ Keyboard shortcut support (~Alt+Shift+O~ / ~Option+Shift+O~ on Mac)
+- ✅ Toolbar button for quick access
+
+** HTML to Org-mode Conversion Support
+- *Text formatting*: ~*bold*~, ~/italic/~, ~_underline_~, ~~code~~, ~+strikethrough+~
+- *Headings*: H1-H6 → ~*~ to ~******~
+- *Links*: ~<a href="url">text</a>~ → ~[[url][text]]~
+- *Images*: ~<img>~ → ~[[src][alt]]~
+- *Lists*: Unordered (~-~) and ordered (~1.~) lists
+- *Tables*: HTML tables → Org-mode table format with ~|~ separators
+- *Blockquotes*: ~#+begin_quote~ blocks
+- *Code blocks*: ~#+begin_example~ blocks
+- *Proper whitespace cleanup*: Ensures headings start at column 0
+
+* Installation
+
+** Quick Installation (Recommended)
+1. Download or clone this repository
+2. Open Edge and go to ~edge://extensions/~
+3. Enable "Developer mode" (toggle in top-right)
+4. Click "Load unpacked" and select the ~dist/~ folder
+5. The extension is ready to use!
+
+** Development Installation
+1. Clone this repository:
+   #+begin_src bash
+   git clone https://github.com/sethjano/copy-as-org-mode-edge.git
+   cd copy-as-org-mode-edge-extension
+   #+end_src
+
+2. Build the extension:
+   #+begin_src bash
+   node build-simple.js
+   #+end_src
+
+3. Load in Edge/Chrome:
+   - Go to ~edge://extensions/~ or ~chrome://extensions/~
+   - Enable "Developer mode"
+   - Click "Load unpacked" and select the ~dist/~ folder
+
+* Usage
+
+** Keyboard Shortcut
+- *Windows/Linux*: ~Alt+Shift+O~
+- *Mac*: ~Option+Shift+O~
+- Select text on any webpage and press the shortcut to copy as Org-mode format
+
+** Context Menu
+1. Select text, right-click → "Copy Selection as Org-Mode"
+2. Right-click on page → "Copy Current Page's Title and URL as Org-Mode"  
+3. Right-click on links → "Copy This Link as Org-Mode"
+
+** Toolbar Button
+- Click the extension icon in the toolbar to copy selected text
+
+* Testing
+
+We've included a comprehensive test page to verify conversion accuracy:
+
+** Online Test Page
+[[https://raw.githubusercontent.com/sethjano/copy-as-org-mode-edge/master/test-page.html][Test Page (GitHub Raw)]]
+
+*To use the test page:*
+1. Copy the link above and paste into your browser
+2. Or save the file locally and open in your browser
+3. Select different sections and test the conversion
+4. Compare results with expected Org-mode syntax
+
+** Test Content Includes
+- Text formatting examples (bold, italic, code, etc.)
+- Heading hierarchy (H1-H6)
+- Links and references
+- Code blocks and inline code
+- Lists (ordered and unordered)
+- Blockquotes
+- Tables (simple and complex)
+- Mixed content sections
+
+* Development
+
+** Project Structure
+#+begin_src
+copy-as-org-mode-edge-extension/
+├── dist/                   # Built extension files (load this in browser)
+│   ├── manifest.json
+│   ├── background.js
+│   ├── content.js
+│   ├── options.js
+│   ├── options_ui.html
+│   └── img/
+├── src/                    # Source TypeScript files
+│   ├── background.ts
+│   ├── content.ts
+│   ├── options.ts
+│   └── options_ui/
+├── build-simple.js         # Simple build script
+├── test-page.html          # Comprehensive test page
+└── README.org              # This file
+#+end_src
+
+** Build Commands
+- ~node build-simple.js~ - Build the extension for testing
+- The built files go into the ~dist/~ directory
+
+** Technical Details
+- *Manifest V3*: Modern extension architecture
+- *Service Worker*: Background script using service worker pattern
+- *Chrome APIs*: Uses ~chrome.scripting~, ~chrome.contextMenus~, etc.
+- *Clipboard API*: Modern clipboard API with fallback support
+- *Cross-platform*: Works on Windows, Mac, and Linux
+
+* Differences from Original Firefox Version
+
+This Edge/Chrome version includes several key adaptations:
+
+1. *Manifest V3 Compatibility*: Updated from Firefox Manifest V2 to Chrome/Edge Manifest V3
+2. *Service Worker Architecture*: Background script converted to service worker
+3. *Chrome Extension APIs*: Uses Chrome extension APIs instead of Firefox WebExtensions
+4. *Modern Scripting API*: Uses ~chrome.scripting.executeScript~ for content injection
+5. *Enhanced Clipboard Support*: Modern clipboard API with robust fallback methods
+6. *Improved Error Handling*: Better error handling and user feedback
+7. *Conflict-free Shortcuts*: Keyboard shortcuts that don't interfere with browser functions
+
+* Credits
+
+This extension is inspired by and builds upon the excellent work by *ono ono (kuanyui)*:
+
+- *Original Firefox Extension*: [[https://github.com/kuanyui/copy-as-org-mode][copy-as-org-mode]]
+- *Original Author*: [[https://github.com/kuanyui][ono ono (kuanyui)]]
+
+The original extension provided the foundation and inspiration for this Edge/Chrome adaptation. This project reimplements the core functionality using modern browser extension APIs while maintaining compatibility with the original's Org-mode output format.
+
+* License
+
+MPL-2.0 - Same license as the original project to maintain compatibility and honor the original author's licensing choice.
+
+* Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch (~git checkout -b feature/amazing-feature~)
+3. Make your changes
+4. Test thoroughly in both Edge and Chrome
+5. Update the test page if adding new conversion features
+6. Submit a pull request
+
+** Areas for Contribution
+- Enhanced HTML conversion features
+- Additional formatting options
+- Performance improvements
+- Cross-browser compatibility testing
+- Documentation improvements
+
+* Roadmap
+
+** Completed ✅
+- [X] Full HTML to Org-mode conversion engine
+- [X] Context menu integration
+- [X] Keyboard shortcut support
+- [X] Clipboard functionality with fallbacks
+- [X] Whitespace cleanup and proper formatting
+- [X] Cross-platform compatibility
+- [X] Comprehensive test page
+- [X] Error handling and user feedback
+
+** Planned 🚀
+- [ ] Enhanced options page with more customization
+- [ ] Additional conversion features (nested lists, complex tables)
+- [ ] Publish to Microsoft Edge Add-ons store
+- [ ] Publish to Chrome Web Store
+- [ ] Performance optimizations
+- [ ] Automated testing suite
+
+* Support
+
+If you encounter issues or have suggestions:
+
+1. Check the [[https://raw.githubusercontent.com/sethjano/copy-as-org-mode-edge/master/test-page.html][test page]] to verify expected behavior
+2. Open an issue on [[https://github.com/sethjano/copy-as-org-mode-edge][GitHub]]
+3. Include details about your browser, OS, and the content you're trying to convert
+
+---
+
+*Happy Org-mode copying! 📋 → 📝*
