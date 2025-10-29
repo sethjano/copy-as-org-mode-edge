@@ -75,7 +75,7 @@ A browser extension that allows you to copy selected web page content as Org-mod
 We've included a comprehensive test page to verify conversion accuracy:
 
 ** Online Test Page
-[[https://raw.githubusercontent.com/sethjano/copy-as-org-mode-edge/master/test-page.html][Test Page (GitHub Raw)]]
+[[https://htmlpreview.github.io/?https://raw.githubusercontent.com/sethjano/copy-as-org-mode-edge/master/test-page.html][Test Page (GitHub htmlpreview]]
 
 *To use the test page:*
 1. Copy the link above and paste into your browser
@@ -193,7 +193,7 @@ Contributions are welcome! Please:
 
 If you encounter issues or have suggestions:
 
-1. Check the [[https://raw.githubusercontent.com/sethjano/copy-as-org-mode-edge/master/test-page.html][test page]] to verify expected behavior
+1. Check the [[https://htmlpreview.github.io/?https://raw.githubusercontent.com/sethjano/copy-as-org-mode-edge/master/test-page.html][test page]] to verify expected behavior
 2. Open an issue on [[https://github.com/sethjano/copy-as-org-mode-edge][GitHub]]
 3. Include details about your browser, OS, and the content you're trying to convert
 
